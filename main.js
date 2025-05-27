@@ -127,7 +127,7 @@ function menuCreated (m) {
 // every time the menu is refreshed.
 const TAB_MAP = {};
 
-const CONTEXTS = ['all', 'page', 'action']; // 'tab'
+const CONTEXTS = ['tab'];
 
 // This is a dispatch table that refines browser.menus.onShown by
 // mapping menu item IDs to handler functions which are proxied by
@@ -251,10 +251,10 @@ browser.menus.create({
 
 // add the listeners
 
-if (browser.menus.onHidden) browser.menus.onHidden.addListener(
-    async function () {
-        await browser.menus.update('ttnw', { enabled: false });
-    });
+// if (browser.menus.onHidden) browser.menus.onHidden.addListener(
+//     async function () {
+//         await browser.menus.update('ttnw', { enabled: false });
+//     });
 
 function tabWTF(info, tab) {
     let id = info.menuIds[0];
